@@ -21,14 +21,16 @@ $("#submitBet").on("click", function(e) {
     if(userTokens === 0) {
         alert("Please get tokens first!")
     } else {
-        var winningNumber = Math.floor(Math.random() * 1) + 1
+        var winningNumber = Math.floor(Math.random() * 37)
         var winningColor = colorsArr[Math.floor(Math.random()*colorsArr.length)]
         var colorGuess = $("#color").val().toLowerCase();
         var numberGuess = parseInt($("#number").val());
         var userBet = parseInt($("#bet").val());
         $("#winningNumber").html("Winning Number: " + winningNumber)
         $("#winningColor").html("Winning Color: " + winningColor)
-        console.log(userBet)
+        console.log(colorGuess)
+        console.log(winningColor)
+        console.log(numberGuess)
         console.log(winningNumber)
 
         if(colorGuess == winningColor && numberGuess === winningNumber) {
